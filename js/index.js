@@ -23,7 +23,7 @@ nav.addEventListener("focusin", (event) => {
 
 // //event litener #4
 nav.addEventListener("focusout", (event) => {
-    event.target.style.textDecoration = "none"
+    event.target.style.color = "purple";
 })
 
 //event listener #5
