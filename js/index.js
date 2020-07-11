@@ -1,7 +1,5 @@
-// Your code goes here
 
-
-//event listener #1
+// //event listener #1
 let logoHeading = document.querySelector(".logo-heading");
 
 logoHeading.addEventListener('mouseover', (event) => {
@@ -12,17 +10,18 @@ logoHeading.addEventListener('mouseover', (event) => {
 let intro = document.querySelector(".intro");
 
 intro.addEventListener('dblclick', (event) => {
-    event.target.style.cursor = "zoom-in"
+    event.target.style.cursor = "zoom-in";
 })
 
-//event listener #3
+// //event listener #3
 let nav = document.querySelector("nav");
 
 nav.addEventListener("focusin", (event) => {
+    event.preventDefault();
     event.target.style.fontSize = "4rem"
 })
 
-//event litener #4
+// //event litener #4
 nav.addEventListener("focusout", (event) => {
     event.target.style.textDecoration = "none"
 })
@@ -78,9 +77,16 @@ function logKey(e) {
     p.textContent += "Hello";
 }
 
+//Using stopPropagation by nesting
 
-// document.addEventListener('keydown', logKey);
+let bigP = document.querySelector(".intro");
 
-// function logKey(e) {
-//   log.textContent += ` ${e.code}`;
-// }
+bigP.addEventListener("click", (event) => {
+    event.target.style.backgroundColor = "yellow";
+})
+
+p.addEventListener("click", (event) => {
+    event.stopPropagation();
+    event.target.style.backgroundColor = "red";
+})
+
