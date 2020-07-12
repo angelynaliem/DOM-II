@@ -41,25 +41,25 @@ window.addEventListener("resize", (event) => {
     alert("Just playing with resizing")
 })
 
-//event listener #8
-let last_known_scroll_position = 0;
-let ticking = false;
+// event listener #8
+// let last_known_scroll_position = 0;
+// let ticking = false;
 
-function doSomething(scroll_pos) {
-    alert("Playing with scrolling")
-}
+// function doSomething(scroll_pos) {
+//     alert("Playing with scrolling")
+// }
 
-window.addEventListener("scroll", function(e) {
-    last_known_scroll_position = window.scrollY;
+// window.addEventListener("scroll", function(e) {
+//     last_known_scroll_position = window.scrollY;
 
-    if (!ticking) {
-        window.requestAnimationFrame(function() {
-            doSomething(last_known_scroll_position);
-            ticking = false;
-        })
-        ticking = true;
-    }
-})
+//     if (!ticking) {
+//         window.requestAnimationFrame(function() {
+//             doSomething(last_known_scroll_position);
+//             ticking = false;
+//         })
+//         ticking = true;
+//     }
+// })
 
 //event listener #9
 let textContent = document.querySelector(".text-content");
@@ -90,3 +90,10 @@ p.addEventListener("click", (event) => {
     event.target.style.backgroundColor = "red";
 })
 
+//GSAP
+
+gsap.to(".img-content img", {duration: 3, x: 100, opacity: 0.5, scale: 1});
+
+// gsap.to("img", {duration: 1, opacity: 0.3});
+
+// gsap.from("#logo", {duration: 3, x: 300, opacity: 0, scale: 0.5});
